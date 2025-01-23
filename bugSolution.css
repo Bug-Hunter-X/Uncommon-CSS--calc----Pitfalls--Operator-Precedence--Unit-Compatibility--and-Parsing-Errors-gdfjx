@@ -1,0 +1,31 @@
+/* bugSolution.css */
+
+/* Correcting operator precedence issues */
+.correct-precedence {
+  width: calc(100% - (10px + 5%)); /* Use parentheses to control precedence */
+}
+
+/* Correcting unit compatibility issues */
+.correct-units {
+  height: calc(100px + 10em); /* Ensure units are compatible; results might vary depending on context */
+}
+
+/* Correcting parsing errors */
+.correct-parsing {
+  margin: calc(10px + 5%); /* Add spaces around operators */
+}
+
+/*Example of avoiding nested calculations to prevent potential parsing errors */
+.avoid-nesting{
+  width: calc(100px + 5%);
+  margin-left: calc(5%);
+}
+
+/*Demonstrates a more robust approach to managing calculations by using variables*/
+:root{
+  --width: 100px;
+  --percentage: 5%;
+}
+.using-variables{
+  width: calc(var(--width) + var(--percentage));
+}
